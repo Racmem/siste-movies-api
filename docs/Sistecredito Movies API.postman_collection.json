@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "8cc45b3a-6e42-4787-b282-15687898a0a8",
+		"name": "Sistecredito Movies API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Film Rating",
+			"item": [
+				{
+					"name": "Get Ratings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/ratings",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"ratings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rating by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/ratings/{{RATING_ID}}",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"ratings",
+								"{{RATING_ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Genders",
+			"item": [
+				{
+					"name": "Get Genders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/genders",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"genders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Genre by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/genders/{{GENRE_ID}}",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"genders",
+								"{{GENRE_ID}}"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "Create Movie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Movie name\",\n    \"release_date\": \"2022-07-20\",\n    \"film_rating_id\": 2,\n    \"amount\": 12,\n    \"price\": 19.8,\n    \"genders\": [2, 5]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-url}}/movies",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/movies",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "genre",
+									"value": "Aventuras",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Pollonejo",
+									"disabled": true
+								},
+								{
+									"key": "rating",
+									"value": "G",
+									"disabled": true
+								},
+								{
+									"key": "release_date",
+									"value": "2022-07-18",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/movies/{{MOVIE_ID}}",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"movies",
+								"{{MOVIE_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Movie",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Movi\",\n    \"release_date\": \"2022-07-20\",\n    \"film_rating_id\": 1,\n    \"amount\": 5,\n    \"price\": 17.8,\n    \"genders\": [1, 5]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-url}}/movies/{{MOVIE_ID}}",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"movies",
+								"{{MOVIE_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movie by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/movies/{{MOVIE_ID}}",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"movies",
+								"{{MOVIE_ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api-url}}/health",
+					"host": [
+						"{{api-url}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api Docs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/docs/#/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"docs",
+						""
+					],
+					"hash": "/"
+				}
+			},
+			"response": []
+		}
+	]
+}

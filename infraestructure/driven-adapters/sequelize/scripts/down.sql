@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS `inventory`;
+DROP TABLE IF EXISTS `movie_genre`;
+DROP TABLE IF EXISTS `movies`;
+DROP TABLE IF EXISTS `genders`;
+DROP TABLE IF EXISTS `film_rating`;
